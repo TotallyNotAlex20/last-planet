@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cupnehopfis84"]
+[gd_scene load_steps=10 format=3 uid="uid://cupnehopfis84"]
 
 [ext_resource type="Script" path="res://odi.gd" id="1_gakng"]
 [ext_resource type="Texture2D" uid="uid://dqf8erre2sa7e" path="res://sprites/odi/head.png" id="1_pah22"]
@@ -36,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node2D/Fist:position")
+tracks/2/path = NodePath("hands/Fist:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -48,7 +48,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Node2D/Fist2:position")
+tracks/3/path = NodePath("hands/Fist2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -99,7 +99,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Fist:position")
+tracks/1/path = NodePath("hands/Fist:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -111,7 +111,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node2D/Fist2:position")
+tracks/2/path = NodePath("hands/Fist2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -156,11 +156,137 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(1, -36)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("hands:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_42jy1"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hands/Fist2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(17, -21), Vector2(14, -18), Vector2(10, -19), Vector2(14, -18), Vector2(17, -21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hands/Fist:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-15, -20), Vector2(-11, -18), Vector2(-6, -19), Vector2(-9, -17), Vector2(-15, -20)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hands:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("legs/Leg2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -4), Vector2(-3, -9), Vector2(-8, -4), Vector2(4, -4), Vector2(9, -4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("legs/Leg:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, -4), Vector2(5, -4), Vector2(10, -4), Vector2(-2, -9), Vector2(-8, -4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -35), Vector2(1, -35), Vector2(1, -35), Vector2(1, -35), Vector2(1, -35)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer:root_motion_track")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [NodePath("")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q0nlu"]
 _data = {
 "RESET": SubResource("Animation_kfef1"),
-"idle": SubResource("Animation_tivvf")
+"idle": SubResource("Animation_tivvf"),
+"walk": SubResource("Animation_42jy1")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_862lg"]
@@ -184,13 +310,13 @@ texture = ExtResource("2_ycj7a")
 position = Vector2(9, -4)
 texture = ExtResource("2_ycj7a")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="hands" type="Node2D" parent="."]
 
-[node name="Fist" type="Sprite2D" parent="Node2D"]
+[node name="Fist" type="Sprite2D" parent="hands"]
 position = Vector2(-15, -19)
 texture = ExtResource("3_3rt8d")
 
-[node name="Fist2" type="Sprite2D" parent="Node2D"]
+[node name="Fist2" type="Sprite2D" parent="hands"]
 position = Vector2(17, -20)
 texture = ExtResource("3_3rt8d")
 
@@ -198,6 +324,7 @@ texture = ExtResource("3_3rt8d")
 libraries = {
 "": SubResource("AnimationLibrary_q0nlu")
 }
+speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -20)

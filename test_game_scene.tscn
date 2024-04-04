@@ -18,5 +18,4 @@ position = Vector2(-0.167112, -1)
 shape = SubResource("RectangleShape2D_ojynk")
 
 [node name="Odi" parent="." instance=ExtResource("1_je76d")]
-position = Vector2(531, 310)
 scale = Vector2(3.04, 3.04)
