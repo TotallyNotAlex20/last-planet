@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://das7h864qk4a3"]
+[gd_scene load_steps=4 format=3 uid="uid://das7h864qk4a3"]
+
+[ext_resource type="PackedScene" uid="uid://cupnehopfis84" path="res://odi.tscn" id="1_je76d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8i1wx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojynk"]
 
 [node name="TestGameScene" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(587, 378)
+scale = Vector2(59.84, 1)
+physics_material_override = SubResource("PhysicsMaterial_8i1wx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(-0.167112, -1)
+shape = SubResource("RectangleShape2D_ojynk")
+
+[node name="Odi" parent="." instance=ExtResource("1_je76d")]
+position = Vector2(531, 310)
+scale = Vector2(3.04, 3.04)
