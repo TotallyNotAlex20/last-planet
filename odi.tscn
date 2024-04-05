@@ -266,7 +266,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_862lg"]
-size = Vector2(7.90837, 16.4248)
+size = Vector2(8.18108, 16.4248)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_behqp"]
 
@@ -280,7 +280,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -22.27)
+position = Vector2(1, -22.27)
 rotation = 3.14159
 scale = Vector2(3.667, -2.646)
 shape = SubResource("RectangleShape2D_862lg")
@@ -321,3 +321,4 @@ scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_behqp")
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
+[connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]

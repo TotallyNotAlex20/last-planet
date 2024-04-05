@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://befacquohnf62"]
+
+[ext_resource type="Texture2D" uid="uid://bljsyww4usanj" path="res://sprites/gui/pc_monitor.png" id="1_g6hql"]
+
+[node name="PCMonitor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PcMonitor" type="Sprite2D" parent="."]
+position = Vector2(586, 318)
+scale = Vector2(7.18, 7.18)
+texture = ExtResource("1_g6hql")
+metadata/_edit_lock_ = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 415.0
+offset_right = 799.0
+offset_bottom = 454.0
+placeholder_text = "Enter Cringe and send"
