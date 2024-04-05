@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://das7h864qk4a3"]
 
 [ext_resource type="Texture2D" uid="uid://bpohk2bygrabw" path="res://sprites/maps/test map.png" id="1_6go41"]
-[ext_resource type="PackedScene" uid="uid://pokmwlgegi8m" path="res://items/moving_platform.tscn" id="2_ykluv"]
-[ext_resource type="PackedScene" uid="uid://2djtmchjeylx" path="res://items/monitor.tscn" id="3_s6d4s"]
+[ext_resource type="PackedScene" uid="uid://pokmwlgegi8m" path="res://objects/moving_platform.tscn" id="2_ykluv"]
+[ext_resource type="PackedScene" uid="uid://2djtmchjeylx" path="res://objects/monitor.tscn" id="3_s6d4s"]
 [ext_resource type="PackedScene" uid="uid://cupnehopfis84" path="res://odi.tscn" id="4_khyv4"]
-[ext_resource type="PackedScene" uid="uid://befacquohnf62" path="res://items/monitor_gui.tscn" id="5_dgrh3"]
+[ext_resource type="PackedScene" uid="uid://befacquohnf62" path="res://objects/monitor_gui.tscn" id="5_dgrh3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8i1wx"]
 
