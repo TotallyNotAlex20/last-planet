@@ -14,6 +14,6 @@ func _physics_process(delta):
 		self.position += Vector2(speed_x, speed_y)
 	elif !direction:
 		self.position -= Vector2(speed_x, speed_y)
-	print(start_position + range, abs(self.position))
+		
 	if direction and start_position + range < abs(self.position) or !direction and start_position - range > abs(self.position):
 		direction = !direction

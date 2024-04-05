@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var x_scale = get_node("body").scale.x
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
+var interactable_objects = ["Monitor"] # need to move this to a global script later maybe? 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -30,3 +31,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_interaction_range_body_entered(body):
+	print(body.name)
+	if body.name in interactable_objects:
+		print("press E to interact with " + body.name)

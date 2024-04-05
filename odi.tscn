@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cupnehopfis84"]
+[gd_scene load_steps=11 format=3 uid="uid://cupnehopfis84"]
 
 [ext_resource type="Script" path="res://odi.gd" id="1_gakng"]
 [ext_resource type="Texture2D" uid="uid://dqf8erre2sa7e" path="res://sprites/odi/head.png" id="1_pah22"]
@@ -266,7 +266,9 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_862lg"]
-size = Vector2(9.18972, 20)
+size = Vector2(7.90837, 16.4248)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_behqp"]
 
 [node name="Odi" type="CharacterBody2D"]
 script = ExtResource("1_gakng")
@@ -278,9 +280,9 @@ libraries = {
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -20)
+position = Vector2(1.5, -22.27)
 rotation = 3.14159
-scale = Vector2(2.77197, -2.00035)
+scale = Vector2(3.667, -2.646)
 shape = SubResource("RectangleShape2D_862lg")
 
 [node name="body" type="Node2D" parent="."]
@@ -309,3 +311,13 @@ texture = ExtResource("3_3rt8d")
 [node name="Fist2" type="Sprite2D" parent="body/hands"]
 position = Vector2(17, -20)
 texture = ExtResource("3_3rt8d")
+
+[node name="InteractionRange" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
+position = Vector2(1, -20)
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_behqp")
+
+[connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]

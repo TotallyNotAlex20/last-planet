@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://das7h864qk4a3"]
 
-[ext_resource type="PackedScene" uid="uid://cupnehopfis84" path="res://odi.tscn" id="1_je76d"]
-[ext_resource type="PackedScene" uid="uid://2djtmchjeylx" path="res://monitor.tscn" id="2_3w0g8"]
-[ext_resource type="Texture2D" uid="uid://bpohk2bygrabw" path="res://sprites/maps/test map.png" id="2_px1vf"]
-[ext_resource type="PackedScene" uid="uid://pokmwlgegi8m" path="res://items/moving_platform.tscn" id="2_sdhku"]
+[ext_resource type="Texture2D" uid="uid://bpohk2bygrabw" path="res://sprites/maps/test map.png" id="1_6go41"]
+[ext_resource type="PackedScene" uid="uid://pokmwlgegi8m" path="res://items/moving_platform.tscn" id="2_ykluv"]
+[ext_resource type="PackedScene" uid="uid://2djtmchjeylx" path="res://items/monitor.tscn" id="3_s6d4s"]
+[ext_resource type="PackedScene" uid="uid://cupnehopfis84" path="res://odi.tscn" id="4_khyv4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8i1wx"]
 
@@ -36,9 +36,9 @@ size = Vector2(1.45388, 28)
 [node name="TestMap" type="Sprite2D" parent="."]
 position = Vector2(633, 305)
 scale = Vector2(3.12182, 3.12182)
-texture = ExtResource("2_px1vf")
+texture = ExtResource("1_6go41")
 
-[node name="MovingPlatform" parent="." instance=ExtResource("2_sdhku")]
+[node name="MovingPlatform" parent="." instance=ExtResource("2_ykluv")]
 position = Vector2(590, 178)
 
 [node name="colissions" type="StaticBody2D" parent="."]
@@ -78,9 +78,9 @@ shape = SubResource("RectangleShape2D_o6akp")
 position = Vector2(3.46758, 97)
 shape = SubResource("RectangleShape2D_o3dtf")
 
-[node name="Monitor" parent="." instance=ExtResource("2_3w0g8")]
+[node name="Monitor" parent="." instance=ExtResource("3_s6d4s")]
 position = Vector2(124, 590)
 scale = Vector2(1.695, 1.695)
 
-[node name="Odi" parent="." instance=ExtResource("1_je76d")]
+[node name="Odi" parent="." instance=ExtResource("4_khyv4")]
 position = Vector2(573, 276)
