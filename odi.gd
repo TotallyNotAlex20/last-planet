@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-@onready var animator = get_node("AnimationPlayer")
-@onready var x_scale = get_node("body").scale.x
+@onready var x_scale = $body.scale.x
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var interactable_objects = {"Monitor": false} # ture = currently can interact 
@@ -9,7 +8,7 @@ var interactable_objects = {"Monitor": false} # ture = currently can interact
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	animator.play("idle")
+	$AnimationPlayer.play("idle")
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -21,13 +20,13 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
-		animator.play("walk")
+		$AnimationPlayer.play("walk")
 		if direction < 0:
-			get_node("body").scale.x = x_scale
+			$body.scale.x = x_scale
 		elif direction > 0:
-			get_node("body").scale.x = -x_scale
+			$body.scale.x = -x_scale
 	else:
-		animator.play("idle")
+		$AnimationPlayer.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
