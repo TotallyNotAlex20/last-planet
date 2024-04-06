@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp62x23hfa4sg"]
+
+[ext_resource type="Texture2D" uid="uid://b47c7lthittwv" path="res://sprites/maps/temp starting point.png" id="1_r1u8j"]
+[ext_resource type="PackedScene" uid="uid://ds35iwxlkgdwj" path="res://objects/door.tscn" id="2_353da"]
+[ext_resource type="PackedScene" uid="uid://2djtmchjeylx" path="res://objects/monitor.tscn" id="3_mgixt"]
+[ext_resource type="PackedScene" uid="uid://befacquohnf62" path="res://objects/monitor_gui.tscn" id="4_0vxk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f55s0"]
+size = Vector2(429.667, 8.00001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6geld"]
+size = Vector2(12, 138.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp8xx"]
+size = Vector2(161.333, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtdik"]
+size = Vector2(169, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqrs"]
+size = Vector2(12, 19)
+
+[node name="StartingPoint" type="Node2D"]
+
+[node name="TempStartingPoint" type="Sprite2D" parent="."]
+position = Vector2(600, 240)
+scale = Vector2(3, 3)
+texture = ExtResource("1_r1u8j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TempStartingPoint"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempStartingPoint/StaticBody2D"]
+position = Vector2(0.166672, 131)
+shape = SubResource("RectangleShape2D_f55s0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TempStartingPoint/StaticBody2D"]
+position = Vector2(-209, 65.3333)
+shape = SubResource("RectangleShape2D_6geld")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TempStartingPoint/StaticBody2D"]
+position = Vector2(-134, 2.00002)
+shape = SubResource("RectangleShape2D_vp8xx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TempStartingPoint/StaticBody2D"]
+position = Vector2(130.5, 2.00002)
+shape = SubResource("RectangleShape2D_rtdik")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TempStartingPoint/StaticBody2D"]
+position = Vector2(209, 17.5)
+shape = SubResource("RectangleShape2D_3yqrs")
+
+[node name="Door" parent="." instance=ExtResource("2_353da")]
+position = Vector2(1227, 471)
+scale = Vector2(3, 3)
+
+[node name="Door2" parent="." instance=ExtResource("2_353da")]
+position = Vector2(588, 246)
+rotation = 1.5708
+scale = Vector2(3, 3)
+
+[node name="Monitor" parent="." instance=ExtResource("3_mgixt")]
+position = Vector2(854, 573)
+scale = Vector2(3, 3)
+
+[node name="PCMonitor" parent="." instance=ExtResource("4_0vxk7")]
+visible = false

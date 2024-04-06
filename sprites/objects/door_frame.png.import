@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3nxccrpsadfs"
-path="res://.godot/imported/monitor.png-8d6294139a3d16c733afc62817b13061.ctex"
+uid="uid://f88y486ibl0e"
+path="res://.godot/imported/door_frame.png-a886fb8b455bccb0216b2654fe2506e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/monitor.png"
-dest_files=["res://.godot/imported/monitor.png-8d6294139a3d16c733afc62817b13061.ctex"]
+source_file="res://sprites/objects/door_frame.png"
+dest_files=["res://.godot/imported/door_frame.png-a886fb8b455bccb0216b2654fe2506e9.ctex"]
 
 [params]
 
