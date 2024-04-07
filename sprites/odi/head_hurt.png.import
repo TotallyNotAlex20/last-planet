@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bljsyww4usanj"
-path="res://.godot/imported/pc_monitor.png-cfebfe233bb6e3bad2daa6536c36d14d.ctex"
+uid="uid://b0i5vtxry7qlw"
+path="res://.godot/imported/head_hurt.png-c7606ac104a43ac916e1facde71f5395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/gui/pc_monitor.png"
-dest_files=["res://.godot/imported/pc_monitor.png-cfebfe233bb6e3bad2daa6536c36d14d.ctex"]
+source_file="res://sprites/odi/head_hurt.png"
+dest_files=["res://.godot/imported/head_hurt.png-c7606ac104a43ac916e1facde71f5395.ctex"]
 
 [params]
 

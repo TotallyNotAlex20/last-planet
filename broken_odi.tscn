@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://edoddyyq0pr5"]
+
+[ext_resource type="Texture2D" uid="uid://dqf8erre2sa7e" path="res://sprites/odi/head.png" id="1_4t4uo"]
+[ext_resource type="Script" path="res://broken_odi.gd" id="1_l8u2a"]
+[ext_resource type="Texture2D" uid="uid://cm2xlh5si4jr2" path="res://sprites/odi/head_blink_1.png" id="2_3smoo"]
+[ext_resource type="Texture2D" uid="uid://dlhtt3tfqdu7d" path="res://sprites/odi/head_blink_2.png" id="3_sauj3"]
+[ext_resource type="Texture2D" uid="uid://b0i5vtxry7qlw" path="res://sprites/odi/head_hurt.png" id="4_3llhy"]
+[ext_resource type="Texture2D" uid="uid://0grfvlvffl74" path="res://sprites/odi/fist.png" id="5_nckms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5klky"]
+size = Vector2(4.36325, 3.77927)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dn6rc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4t4uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3smoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sauj3")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4t4uo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3llhy")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[node name="Broken Odi" type="CharacterBody2D"]
+script = ExtResource("1_l8u2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, 0)
+rotation = 3.14159
+scale = Vector2(3.667, -2.646)
+shape = SubResource("RectangleShape2D_5klky")
+
+[node name="body" type="Node2D" parent="."]
+
+[node name="Head" type="AnimatedSprite2D" parent="body"]
+sprite_frames = SubResource("SpriteFrames_dn6rc")
+animation = &"blink"
+
+[node name="Fist" type="Sprite2D" parent="body"]
+position = Vector2(15, 2)
+texture = ExtResource("5_nckms")

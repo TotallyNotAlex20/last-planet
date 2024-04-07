@@ -1,7 +1,7 @@
 extends Node2D
 
 func open():
-	$AnimationPLayer.play("open")
+	$AnimationPlayer.play("open")
 	
 func close():
-	$AnimationPLayer.play("close")
+	$AnimationPlayer.play("close")

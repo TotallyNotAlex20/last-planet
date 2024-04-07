@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp62x23hfa4sg"]
+[gd_scene load_steps=16 format=3 uid="uid://dp62x23hfa4sg"]
 
+[ext_resource type="Script" path="res://levels/starting_point.gd" id="1_5ebu7"]
 [ext_resource type="Texture2D" uid="uid://b47c7lthittwv" path="res://sprites/maps/temp starting point.png" id="1_r1u8j"]
 [ext_resource type="PackedScene" uid="uid://ds35iwxlkgdwj" path="res://objects/door.tscn" id="2_353da"]
 [ext_resource type="PackedScene" uid="uid://2djtmchjeylx" path="res://objects/monitor.tscn" id="3_mgixt"]
 [ext_resource type="PackedScene" uid="uid://befacquohnf62" path="res://objects/monitor_gui.tscn" id="4_0vxk7"]
+[ext_resource type="Texture2D" uid="uid://b0i5vtxry7qlw" path="res://sprites/odi/head_hurt.png" id="6_nmtbr"]
+[ext_resource type="Texture2D" uid="uid://0grfvlvffl74" path="res://sprites/odi/fist.png" id="7_th3hw"]
+[ext_resource type="PackedScene" uid="uid://edoddyyq0pr5" path="res://broken_odi.tscn" id="8_vlc7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f55s0"]
 size = Vector2(429.667, 8.00001)
@@ -20,7 +24,13 @@ size = Vector2(169, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqrs"]
 size = Vector2(12, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x17nb"]
+size = Vector2(80, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eavs3"]
+
 [node name="StartingPoint" type="Node2D"]
+script = ExtResource("1_5ebu7")
 
 [node name="TempStartingPoint" type="Sprite2D" parent="."]
 position = Vector2(600, 240)
@@ -64,3 +74,39 @@ scale = Vector2(3, 3)
 
 [node name="PCMonitor" parent="." instance=ExtResource("4_0vxk7")]
 visible = false
+
+[node name="FallingHead" type="RigidBody2D" parent="."]
+position = Vector2(608, -418)
+rotation = -0.6353
+
+[node name="HeadHurt" type="Sprite2D" parent="FallingHead"]
+position = Vector2(1.19209e-07, 1)
+scale = Vector2(5, 5)
+texture = ExtResource("6_nmtbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingHead"]
+position = Vector2(-6.10352e-05, 1.00001)
+shape = SubResource("RectangleShape2D_x17nb")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+
+[node name="FallingHand" type="RigidBody2D" parent="."]
+position = Vector2(657, -554)
+rotation = 0.321668
+
+[node name="Fist" type="Sprite2D" parent="FallingHand"]
+scale = Vector2(5, 5)
+texture = ExtResource("7_th3hw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingHand"]
+scale = Vector2(2.005, 2.005)
+shape = SubResource("RectangleShape2D_eavs3")
+
+[node name="Broken Odi" parent="." instance=ExtResource("8_vlc7b")]
+position = Vector2(323, 94)
+scale = Vector2(5, 5)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

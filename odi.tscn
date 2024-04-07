@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cupnehopfis84"]
+[gd_scene load_steps=16 format=3 uid="uid://cupnehopfis84"]
 
 [ext_resource type="Script" path="res://odi.gd" id="1_gakng"]
 [ext_resource type="Texture2D" uid="uid://dqf8erre2sa7e" path="res://sprites/odi/head.png" id="1_pah22"]
 [ext_resource type="Texture2D" uid="uid://b17l7g7b1dqb8" path="res://sprites/odi/leg.png" id="2_ycj7a"]
+[ext_resource type="Texture2D" uid="uid://cm2xlh5si4jr2" path="res://sprites/odi/head_blink_1.png" id="3_2sx13"]
 [ext_resource type="Texture2D" uid="uid://0grfvlvffl74" path="res://sprites/odi/fist.png" id="3_3rt8d"]
+[ext_resource type="Texture2D" uid="uid://b0i5vtxry7qlw" path="res://sprites/odi/head_hurt.png" id="3_fr14j"]
+[ext_resource type="Texture2D" uid="uid://dlhtt3tfqdu7d" path="res://sprites/odi/head_blink_2.png" id="4_3nb33"]
 
 [sub_resource type="Animation" id="Animation_kfef1"]
 length = 0.001
@@ -91,10 +94,22 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("body/Head:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_tivvf"]
 resource_name = "idle"
-length = 2.0
+length = 10.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -115,10 +130,10 @@ tracks/1/path = NodePath("body/Head:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -35), Vector2(1, -36)]
+"values": [Vector2(1, -35), Vector2(1, -36), Vector2(1, -35), Vector2(1, -36), Vector2(1, -35), Vector2(1, -36), Vector2(1, -35), Vector2(1, -36), Vector2(1, -35), Vector2(1, -36)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -127,10 +142,10 @@ tracks/2/path = NodePath("body/hands/Fist:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-15, -20), Vector2(-15, -19)]
+"values": [Vector2(-15, -20), Vector2(-15, -19), Vector2(-15, -20), Vector2(-15, -19), Vector2(-15, -20), Vector2(-15, -19), Vector2(-15, -20), Vector2(-15, -19), Vector2(-15, -20), Vector2(-15, -19)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -139,10 +154,10 @@ tracks/3/path = NodePath("body/hands/Fist2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(17, -21), Vector2(17, -20)]
+"values": [Vector2(17, -21), Vector2(17, -20), Vector2(17, -21), Vector2(17, -20), Vector2(17, -21), Vector2(17, -20), Vector2(17, -21), Vector2(17, -20), Vector2(17, -21), Vector2(17, -20)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -151,10 +166,10 @@ tracks/4/path = NodePath("body/legs/Leg2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(9, -4), Vector2(9, -4)]
+"values": [Vector2(9, -4)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -163,10 +178,22 @@ tracks/5/path = NodePath("body/legs/Leg:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-8, -4), Vector2(-8, -4)]
+"values": [Vector2(-8, -4)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("body/Head:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(8, 8.1, 8.2, 8.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0]
 }
 
 [sub_resource type="Animation" id="Animation_42jy1"]
@@ -258,15 +285,64 @@ tracks/6/keys = {
 "values": [NodePath("")]
 }
 
+[sub_resource type="Animation" id="Animation_oboaj"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/Head:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q0nlu"]
 _data = {
 "RESET": SubResource("Animation_kfef1"),
+"hurt": SubResource("Animation_oboaj"),
 "idle": SubResource("Animation_tivvf"),
 "walk": SubResource("Animation_42jy1")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_862lg"]
 size = Vector2(8.18108, 16.4248)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_och0n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pah22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2sx13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3nb33")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pah22")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fr14j")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_behqp"]
 
@@ -287,10 +363,11 @@ shape = SubResource("RectangleShape2D_862lg")
 
 [node name="body" type="Node2D" parent="."]
 
-[node name="Head" type="Sprite2D" parent="body"]
+[node name="Head" type="AnimatedSprite2D" parent="body"]
 position = Vector2(1, -36)
 scale = Vector2(1.8125, 1.625)
-texture = ExtResource("1_pah22")
+sprite_frames = SubResource("SpriteFrames_och0n")
+animation = &"blink"
 
 [node name="legs" type="Node2D" parent="body"]
 
