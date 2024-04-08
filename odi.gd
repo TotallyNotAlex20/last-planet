@@ -26,6 +26,7 @@ func _physics_process(delta):
 		elif direction > 0:
 			$body.scale.x = -x_scale
 	else:
+
 		$AnimationPlayer.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

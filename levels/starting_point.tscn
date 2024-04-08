@@ -88,7 +88,11 @@ texture = ExtResource("6_nmtbr")
 position = Vector2(-6.10352e-05, 1.00001)
 shape = SubResource("RectangleShape2D_x17nb")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Timer5" type="Timer" parent="."]
 process_callback = 0
 wait_time = 5.0
 one_shot = true
@@ -109,4 +113,5 @@ shape = SubResource("RectangleShape2D_eavs3")
 position = Vector2(323, 94)
 scale = Vector2(5, 5)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]

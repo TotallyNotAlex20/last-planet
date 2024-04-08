@@ -2,7 +2,8 @@ extends Node2D
 
 func _ready():
 	$Door2.open()
-	$Timer.start()
+	$Timer5.start()
+	$Timer3.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -10,11 +11,18 @@ func _process(delta):
 	pass
 
 
-func _on_timer_timeout():
+func _on_timer_5_timeout():
 	$Door2.close()
+	$"Broken Odi/AnimationPlayer".play("position")
+
+func _on_timer_3_timeout():
+	$"Broken Odi/AnimationPlayer".play("blink")
 	$"Broken Odi".position = $FallingHead.position
-	$"Broken Odi".set_up($FallingHand.position)
-	print( $"Broken Odi/body/Fist".position)
 	$FallingHead.free()
 	$FallingHand.free()
-	#print($"Broken Odi/body/Head".position)
+	#$"Broken Odi".set_up((($FallingHand.position - $"Broken Odi".position) / 4))
+	
+	
+
+
+
