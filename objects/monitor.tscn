@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://2djtmchjeylx"]
+[gd_scene load_steps=5 format=3 uid="uid://2djtmchjeylx"]
 
 [ext_resource type="Script" path="res://objects/monitor.gd" id="1_50uip"]
 [ext_resource type="Texture2D" uid="uid://b3nxccrpsadfs" path="res://sprites/objects/monitor.png" id="1_uhihu"]
+[ext_resource type="PackedScene" uid="uid://befacquohnf62" path="res://objects/monitor_gui.tscn" id="3_saw2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d71a2"]
 size = Vector2(32, 32)
@@ -10,9 +11,14 @@ size = Vector2(32, 32)
 script = ExtResource("1_50uip")
 
 [node name="texture" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("1_uhihu")
 
+[node name="ui" parent="." instance=ExtResource("3_saw2e")]
+
 [node name="Monitor" type="StaticBody2D" parent="."]
+metadata/interactable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monitor"]
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_d71a2")

@@ -390,7 +390,6 @@ position = Vector2(17, -20)
 texture = ExtResource("3_3rt8d")
 
 [node name="InteractionRange" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
 position = Vector2(1, -20)

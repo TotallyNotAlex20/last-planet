@@ -42,6 +42,7 @@ texture = ExtResource("1_r1u8j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TempStartingPoint/StaticBody2D"]
 position = Vector2(0.166672, 131)
 shape = SubResource("RectangleShape2D_f55s0")
+metadata/interactable = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TempStartingPoint/StaticBody2D"]
 position = Vector2(-209, 65.3333)
@@ -70,7 +71,8 @@ scale = Vector2(3, 3)
 
 [node name="Monitor" parent="." instance=ExtResource("3_mgixt")]
 position = Vector2(854, 573)
-scale = Vector2(3, 3)
+metadata/interactable = false
+metadata/a = false
 
 [node name="PCMonitor" parent="." instance=ExtResource("4_0vxk7")]
 visible = false
@@ -110,7 +112,7 @@ scale = Vector2(2.005, 2.005)
 shape = SubResource("RectangleShape2D_eavs3")
 
 [node name="Broken Odi" parent="." instance=ExtResource("8_vlc7b")]
-position = Vector2(323, 94)
+position = Vector2(301, -37)
 scale = Vector2(5, 5)
 
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

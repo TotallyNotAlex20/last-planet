@@ -1,12 +1,15 @@
 extends Node2D
-var ui
+
 func _ready():
-	ui = get_node("../PCMonitor")
-	ui.visible = false
+	$ui.global_position = (Vector2(0, 0))
+	$ui.visible = false
 
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("exit_gui") and ui.visible:
-		ui.visible = false
+	if Input.is_action_just_pressed("exit_gui") and $ui.visible:
+		$ui.visible = false
+
+func interact():
+	open_monitor()
 
 func open_monitor():
-	ui.visible = !ui.visible
+	$ui.visible = !$ui.visible
