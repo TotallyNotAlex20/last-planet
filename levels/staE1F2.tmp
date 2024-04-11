@@ -24,12 +24,12 @@ size = Vector2(169, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqrs"]
 size = Vector2(12, 19)
 
+[sub_resource type="Theme" id="Theme_es84u"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x17nb"]
 size = Vector2(80, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eavs3"]
-
-[sub_resource type="Theme" id="Theme_es84u"]
 
 [node name="StartingPoint" type="Node2D"]
 script = ExtResource("1_5ebu7")
@@ -71,6 +71,25 @@ position = Vector2(588, 246)
 rotation = 1.5708
 scale = Vector2(3, 3)
 
+[node name="Monitor" parent="." instance=ExtResource("3_mgixt")]
+position = Vector2(854, 573)
+
+[node name="ui" parent="Monitor" instance=ExtResource("4_0vxk7")]
+offset_left = -556.639
+offset_top = 2.77374
+offset_right = -556.639
+offset_bottom = 2.77374
+
+[node name="Button" type="Button" parent="Monitor/ui"]
+layout_mode = 0
+offset_left = 370.639
+offset_top = 410.226
+offset_right = 437.639
+offset_bottom = 521.226
+scale = Vector2(1.56839, 0.407067)
+theme = SubResource("Theme_es84u")
+text = "CRINGE"
+
 [node name="FallingHead" type="RigidBody2D" parent="."]
 position = Vector2(608, -418)
 rotation = -0.6353
@@ -105,29 +124,10 @@ texture = ExtResource("7_th3hw")
 scale = Vector2(2.005, 2.005)
 shape = SubResource("RectangleShape2D_eavs3")
 
-[node name="Monitor" parent="." instance=ExtResource("3_mgixt")]
-position = Vector2(854, 573)
-
-[node name="ui" parent="Monitor" instance=ExtResource("4_0vxk7")]
-offset_left = -556.639
-offset_top = 2.77374
-offset_right = -556.639
-offset_bottom = 2.77374
-
-[node name="Button" type="Button" parent="Monitor/ui"]
-layout_mode = 0
-offset_left = 370.639
-offset_top = 410.226
-offset_right = 437.639
-offset_bottom = 521.226
-scale = Vector2(1.56839, 0.407067)
-theme = SubResource("Theme_es84u")
-text = "CRINGE"
-
 [node name="Broken Odi" parent="." instance=ExtResource("8_vlc7b")]
 position = Vector2(301, -37)
 scale = Vector2(5, 5)
 
+[connection signal="pressed" from="Monitor/ui/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
-[connection signal="pressed" from="Monitor/ui/Button" to="." method="_on_button_pressed"]

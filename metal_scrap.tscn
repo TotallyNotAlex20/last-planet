@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://s847bch18qqe"]
+
+[ext_resource type="Texture2D" uid="uid://c5tnefssdbgdy" path="res://sprites/items/metal scrap.png" id="1_0l3qs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv87u"]
+size = Vector2(32, 32)
+
+[node name="MetalScrap" type="RigidBody2D"]
+
+[node name="MetalScrap" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_0l3qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mv87u")

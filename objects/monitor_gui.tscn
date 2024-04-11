@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bljsyww4usanj" path="res://sprites/gui/pc_monitor.png" id="1_g6hql"]
 
-[node name="PCMonitor" type="Control"]
+[node name="ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,10 +16,11 @@ scale = Vector2(7.18, 7.18)
 texture = ExtResource("1_g6hql")
 metadata/_edit_lock_ = true
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 372.0
-offset_top = 415.0
-offset_right = 799.0
-offset_bottom = 454.0
-placeholder_text = "Enter Cringe and send"
+offset_top = 182.0
+offset_right = 800.0
+offset_bottom = 234.0
+text = "Test text text for testing lots of text for the purpose of testing regardless of the sucess rate of the tests okay!"
+autowrap_mode = 2

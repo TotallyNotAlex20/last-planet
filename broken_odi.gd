@@ -22,7 +22,6 @@ func _on_area_2d_body_entered(body):
 	if body.get_meta("interactable") != null:
 		interactable_body = body
 
-
 func _on_area_2d_body_exited(body):
 	if body.get_meta("interactable") != null:
 		interactable_body = null

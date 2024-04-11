@@ -1,7 +1,12 @@
 extends Node2D
+var opened = false
 
 func open():
-	$AnimationPlayer.play("open")
+	if !opened:
+		$AnimationPlayer.play("open")
+		opened = true
 	
 func close():
-	$AnimationPlayer.play("close")
+	if opened:
+		$AnimationPlayer.play("close")
+		opened = false
