@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dp62x23hfa4sg"]
+[gd_scene load_steps=21 format=3 uid="uid://dp62x23hfa4sg"]
 
 [ext_resource type="Script" path="res://levels/starting_point.gd" id="1_5ebu7"]
 [ext_resource type="Texture2D" uid="uid://b47c7lthittwv" path="res://sprites/maps/temp starting point.png" id="1_r1u8j"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0grfvlvffl74" path="res://sprites/odi/fist.png" id="7_th3hw"]
 [ext_resource type="PackedScene" uid="uid://edoddyyq0pr5" path="res://broken_odi.tscn" id="8_vlc7b"]
 [ext_resource type="PackedScene" uid="uid://dka2m0nlgi8ip" path="res://objects/moveable_platform.tscn" id="9_7f0cl"]
+[ext_resource type="PackedScene" uid="uid://s847bch18qqe" path="res://metal_scrap.tscn" id="10_cgj1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f55s0"]
 size = Vector2(429.667, 8.00001)
@@ -33,6 +34,9 @@ size = Vector2(80, 50)
 [sub_resource type="Theme" id="Theme_es84u"]
 
 [sub_resource type="Theme" id="Theme_s6orw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j333n"]
+size = Vector2(88, 20)
 
 [node name="StartingPoint" type="Node2D"]
 script = ExtResource("1_5ebu7")
@@ -154,6 +158,15 @@ scale = Vector2(5, 5)
 
 [node name="MoveablePlatform" parent="." instance=ExtResource("9_7f0cl")]
 position = Vector2(240, 348)
+
+[node name="MetalScrap2" parent="." instance=ExtResource("10_cgj1o")]
+position = Vector2(379, 357)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(380, 396)
+shape = SubResource("RectangleShape2D_j333n")
 
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
