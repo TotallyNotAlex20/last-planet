@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0grfvlvffl74" path="res://sprites/odi/fist.png" id="7_th3hw"]
 [ext_resource type="PackedScene" uid="uid://edoddyyq0pr5" path="res://broken_odi.tscn" id="8_vlc7b"]
 [ext_resource type="PackedScene" uid="uid://dka2m0nlgi8ip" path="res://objects/moveable_platform.tscn" id="9_7f0cl"]
-[ext_resource type="PackedScene" uid="uid://s847bch18qqe" path="res://metal_scrap.tscn" id="10_cgj1o"]
+[ext_resource type="PackedScene" uid="uid://c40yseo4vi4w0" path="res://items/battery.tscn" id="10_kl561"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f55s0"]
 size = Vector2(429.667, 8.00001)
@@ -159,14 +159,14 @@ scale = Vector2(5, 5)
 [node name="MoveablePlatform" parent="." instance=ExtResource("9_7f0cl")]
 position = Vector2(240, 348)
 
-[node name="MetalScrap2" parent="." instance=ExtResource("10_cgj1o")]
-position = Vector2(379, 357)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(380, 396)
 shape = SubResource("RectangleShape2D_j333n")
+
+[node name="Battery" parent="." instance=ExtResource("10_kl561")]
+position = Vector2(382, 365)
 
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]

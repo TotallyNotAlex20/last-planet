@@ -8,7 +8,7 @@ func _ready():
 
 func _on_timer_5_timeout():
 	$Door2.close()
-	var scrap = (load("res://metal_scrap.tscn").instantiate())
+	var scrap = (load("res://items/metal_scrap.tscn").instantiate())
 	scrap.rotate(40)
 	add_child(scrap)
 	$MetalScrap.position = Vector2(600, -500)
