@@ -6,6 +6,7 @@
 size = Vector2(32, 32)
 
 [node name="MetalScrap" type="RigidBody2D"]
+metadata/item = true
 
 [node name="MetalScrap sprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -13,4 +14,3 @@ texture = ExtResource("1_0l3qs")
 
 [node name="MetalScrap" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mv87u")
-metadata/item = true

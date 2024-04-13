@@ -6,6 +6,7 @@
 size = Vector2(14, 16)
 
 [node name="Battery" type="RigidBody2D"]
+metadata/item = true
 
 [node name="Battery Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
@@ -16,4 +17,3 @@ texture = ExtResource("1_ch7ss")
 position = Vector2(0, -1)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_km8py")
-metadata/item = true

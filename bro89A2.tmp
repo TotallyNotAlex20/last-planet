@@ -1,0 +1,214 @@
+[gd_scene load_steps=16 format=3 uid="uid://edoddyyq0pr5"]
+
+[ext_resource type="Texture2D" uid="uid://dqf8erre2sa7e" path="res://sprites/odi/head.png" id="1_4t4uo"]
+[ext_resource type="Script" path="res://broken_odi.gd" id="1_l8u2a"]
+[ext_resource type="Texture2D" uid="uid://cm2xlh5si4jr2" path="res://sprites/odi/head_blink_1.png" id="2_3smoo"]
+[ext_resource type="Texture2D" uid="uid://dlhtt3tfqdu7d" path="res://sprites/odi/head_blink_2.png" id="3_sauj3"]
+[ext_resource type="Texture2D" uid="uid://b0i5vtxry7qlw" path="res://sprites/odi/head_hurt.png" id="4_3llhy"]
+[ext_resource type="Texture2D" uid="uid://0grfvlvffl74" path="res://sprites/odi/fist.png" id="5_nckms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5klky"]
+size = Vector2(4.36325, 3.77927)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dn6rc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4t4uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3smoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sauj3")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4t4uo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3llhy")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_pmtat"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/Fist:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/Head:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"blink"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body/Head:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7okkp"]
+resource_name = "blink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/Head:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"blink"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/Head:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body/Fist:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, -9)]
+}
+
+[sub_resource type="Animation" id="Animation_7fe4r"]
+resource_name = "hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/Head:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+
+[sub_resource type="Animation" id="Animation_osy7t"]
+resource_name = "interact"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/Fist:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(18, 1), Vector2(-29, 1), Vector2(-29, -1), Vector2(-29, 1), Vector2(-29, -1), Vector2(-29, 1), Vector2(-29, -1), Vector2(18, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yleui"]
+resource_name = "position"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/Fist:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, -9), Vector2(13, -10), Vector2(18, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywwe5"]
+_data = {
+"RESET": SubResource("Animation_pmtat"),
+"blink": SubResource("Animation_7okkp"),
+"hurt": SubResource("Animation_7fe4r"),
+"interact": SubResource("Animation_osy7t"),
+"position": SubResource("Animation_yleui")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0af2"]
+radius = 41.0122
+
+[node name="Broken Odi" type="CharacterBody2D"]
+script = ExtResource("1_l8u2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, 0)
+rotation = 3.14159
+scale = Vector2(3.667, -2.646)
+shape = SubResource("RectangleShape2D_5klky")
+
+[node name="body" type="Node2D" parent="."]
+
+[node name="Head" type="AnimatedSprite2D" parent="body"]
+sprite_frames = SubResource("SpriteFrames_dn6rc")
+animation = &"blink"
+
+[node name="Fist" type="Sprite2D" parent="body"]
+position = Vector2(3, -9)
+texture = ExtResource("5_nckms")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ywwe5")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t0af2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
