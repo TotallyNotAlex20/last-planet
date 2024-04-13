@@ -19,9 +19,9 @@ func _unhandled_input(event):
 		get_node("../" + interactable_body.name).interact()
 		
 func _on_area_2d_body_entered(body):
-	if body.get_meta("interactable") != null:
+	if body.has_meta("interactable"):
 		interactable_body = body
 
 func _on_area_2d_body_exited(body):
-	if body.get_meta("interactable") != null:
+	if body.has_meta("interactable"):
 		interactable_body = null
