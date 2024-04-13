@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2kipparbh727"]
+
+[ext_resource type="Texture2D" uid="uid://u1okwajykro6" path="res://sprites/items/magnet.png" id="1_2titk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84bcj"]
+size = Vector2(32, 32)
+
+[node name="Magnet" type="RigidBody2D"]
+
+[node name="Magnet sprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_2titk")
+
+[node name="Magnet" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_84bcj")
+metadata/item = true
