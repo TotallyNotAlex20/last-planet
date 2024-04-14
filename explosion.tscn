@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cigy4wf0w56h1"]
+
+[ext_resource type="Texture2D" uid="uid://b8v0q28b4vkxu" path="res://sprites/particles/explosion.png" id="1_nxqoa"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yv2ha"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_612yy"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 60.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+anim_speed_min = 1.0
+anim_speed_max = 1.5
+
+[sub_resource type="GDScript" id="GDScript_o7ca2"]
+script/source = "extends GPUParticles2D
+
+
+
+func _on_timer_timeout():
+	pass
+"
+
+[node name="Explosion" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_yv2ha")
+scale = Vector2(3, 3)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_612yy")
+texture = ExtResource("1_nxqoa")
+one_shot = true
+speed_scale = 3.0
+script = SubResource("GDScript_o7ca2")
