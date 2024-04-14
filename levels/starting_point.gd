@@ -1,10 +1,21 @@
 extends Node2D
-
+var odi
 func _ready():
 	$Door2.open()
 	$Timer5.start()
 	$Timer3.start()
+	odi = (load("res://odi.tscn").instantiate())
+	
 	$Monitor/ui/Label.text = "Oh hi there! How are you doing? I don't care actually, but you can use the buttons to control the infrastructure around here"
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("transform"):
+		
+		odi.global_position = $"Broken Odi".global_position
+		$"Broken Odi".free()
+		add_child(odi)
+		odi.puff()
+		
 
 func _on_timer_5_timeout():
 	$Door2.close()

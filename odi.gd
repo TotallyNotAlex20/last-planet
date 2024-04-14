@@ -43,8 +43,10 @@ func _on_interaction_range_body_entered(body):
 	if body.name in interactable_objects:
 		interactable_objects[body.name] = true
 		print("press E to interact with " + body.name)
-		
 
 func _on_interaction_range_body_exited(body):
 	if body.name in interactable_objects:
 		interactable_objects[body.name] = false
+
+func puff():
+	$Explosion.emitting = true
